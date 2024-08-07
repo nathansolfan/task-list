@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'name' => 'Nathan',
+    ]);
 });
 
 // use the ->name('....') to use it as routes name
