@@ -6,13 +6,21 @@
 <div>
     {{-- @if ( count($tasks) ) --}}
 
-     @foreach ($tasks as $task )
-        <div> {{$task->title}} </div>
-     @endforeach
-    @else
+     @forelse ( $tasks as $task )
+      <div>
+         <a href="{{route('tasks.show'), ['id' => $task->id]}}"></a> {{$task->title}}
+        </div>
+     @empty
+
     <div>
         There are no tasks
     </div>
+
+     @endforelse ($tasks as $task )
+
+
+
+
 
     {{-- @endif --}}
 </div>
