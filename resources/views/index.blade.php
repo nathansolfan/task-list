@@ -1,26 +1,19 @@
-<div>Hello im a template</div>
-
 {{-- Using isset only display this div if $name is available --}}
 
 
-<div>
+@section('content')
     {{-- @if ( count($tasks) ) --}}
 
-     @forelse ( $tasks as $task )
-      <div>
+    @forelse ( $tasks as $task )
+    <div>
         <a href="{{ route('tasks.show', ['id' => $task->id]) }}">{{$task->title}}</a>
     </div>
-     @empty
-
+    @empty
     <div>
         There are no tasks
     </div>
-
      @endforelse ($tasks as $task )
 
-
-
-
-
     {{-- @endif --}}
-</div>
+
+@endsection
