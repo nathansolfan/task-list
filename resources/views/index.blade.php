@@ -1,5 +1,5 @@
 {{-- Using isset only display this div if $name is available --}}
-
+@extends('layout.app')
 
 @section('content')
     {{-- @if ( count($tasks) ) --}}
