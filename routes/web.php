@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 
 Route::get('/tasks', function ()  {
-    return view('index',[ 'tasks' => \App\Models\Task::all()]);
+    return view('index',[ 'tasks' => \App\Models\Task::latest()->get()]);
 })->name('tasks.index');
 
 
